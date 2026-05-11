@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue'
-import { projects } from '@/components/portofolio/pengalaman.js'
+import { projects } from '@/data/pengalaman.js'
 
 const searchQuery = ref('')
 const filteredProjects = computed(() => {

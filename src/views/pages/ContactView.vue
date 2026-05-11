@@ -55,6 +55,7 @@
       </div>
     </div>
   </section>
+  
 </template>
 
 <style scoped>

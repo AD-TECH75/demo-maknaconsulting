@@ -142,7 +142,77 @@
       </div>
     </section>
   </div>
+   <!--
+╔══════════════════════════════════════╗
+║         CTA KE PAGE ABOUT           ║
+╚══════════════════════════════════════╝
+-->
+  <section class="about-preview py-5 bg-white">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Sisi Kiri: Foto Tokoh/Tim dengan Aksen Design -->
+        <div class="col-lg-5 mb-5 mb-lg-0">
+          <div class="position-relative ps-4 pt-4">
+            <!-- Aksen Kotak di Belakang Foto -->
+            <div
+              class="bg-primary position-absolute top-0 start-0 w-75 h-75 rounded-4"
+              style="z-index: 0; opacity: 0.1"
+            ></div>
+
+            <img
+              src="https://placehold.co/300x400"
+              alt="CEO / Team Profile"
+              class="img-fluid rounded-4 shadow-lg position-relative"
+              style="z-index: 1"
+            />
+
+            <!-- Floating Badge Nama/Jabatan -->
+            <div
+              class="bg-white p-3 rounded-3 shadow-sm position-absolute bottom-0 start-0 mb-4 ms-n2"
+              style="z-index: 2; min-width: 200px"
+            >
+              <h6 class="fw-bold mb-0">Bapak Nama Tokoh</h6>
+              <small class="text-muted">CEO & Founder</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sisi Kanan: Cerita Singkat -->
+        <div class="col-lg-6 offset-lg-1">
+          <span class="text-warning fw-bold text-uppercase ls-wide" style="letter-spacing: 2px"
+            >Our Story</span
+          >
+          <h2 class="display-6 fw-bold mt-2 mb-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, at?
+          </h2>
+
+          <p class="text-muted lead mb-4">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit ea ab suscipit dolorum.
+            Tenetur, pariatur.
+          </p>
+
+          <p class="text-secondary mb-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore ut consequatur deleniti
+            ducimus, exercitationem perspiciatis. Atque deleniti nemo accusantium adipisci
+            consequatur deserunt cumque, quod id.
+          </p>
+
+          <!-- Button Arahkan ke AboutView.vue -->
+          <div class="pt-2">
+            <router-link to="/about" class="btn btn-outline-warning btn-lg px-4 rounded-pill">
+              Kenali Kami Lebih Dekat <i class="bi bi-people ms-2"></i>
+            </router-link>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
+
+
+
+
+
 
 <style>
 /* Card Styling */
