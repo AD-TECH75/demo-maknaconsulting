@@ -5,7 +5,9 @@ import { testimoni } from '@/data/portofolio/TestimoniData.js'
 import { images } from '@/data/home/TooltipData.js'
 import { statistik } from '@/data/portofolio/StatistikData.js'
 import { onMounted } from 'vue'
+import { useRoute } from 'vue-router'
 
+const route = useRoute()
 const searchQuery = ref('')
 
 const filteredImages = computed(() => {
@@ -38,6 +40,10 @@ onMounted(() => {
   statistik.forEach((item, index) => {
     animateValue(0, item.value, 1800, index)
   })
+
+  if (route.query.search) {
+    searchQuery.value = route.query.search
+  }
 })
 
 const generateStars = (rating) => {
@@ -81,35 +87,20 @@ const highlightText = (text) => {
   )
 }
 
-const activeTab = ref('testimoni')
+const activeTab = ref(route.query.tab || 'testimoni')
 </script>
 
 <template>
   <section class="container py-5">
-
     <!-- Header -->
     <div class="text-center mb-5">
+      <p class="text-secondary mb-2">Portofolio Perusahaan</p>
 
-      <p class="text-secondary mb-2">
-        Portofolio Perusahaan
-      </p>
-
-      <h2 class="fw-bold">
-        Data & Riwayat Kerja
-      </h2>
-
+      <h2 class="fw-bold">Data & Riwayat Kerja</h2>
     </div>
 
     <!-- Tab Buttons -->
-    <div
-      class="pill-tabs
-             d-flex
-             flex-wrap
-             gap-2
-             justify-content-center
-             mb-4"
-    >
-
+    <div class="pill-tabs d-flex flex-wrap gap-2 justify-content-center mb-4">
       <!-- Testimoni -->
       <button
         class="tab-pill-btn"
@@ -145,7 +136,6 @@ const activeTab = ref('testimoni')
       >
         Statistik
       </button>
-
     </div>
 
     <!--

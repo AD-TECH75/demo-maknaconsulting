@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { useRouter } from 'vue-router'
 import { Tooltip } from 'bootstrap'
 import { images } from '@/data/home/TooltipData.js'
 
@@ -48,6 +49,18 @@ const imageList = ref(images)
 const loopImages = computed(() => [...imageList.value, ...imageList.value])
 
 const TestLogo = Hero2
+
+const router = useRouter()
+
+const goToClient = (name) => {
+  router.push({
+    path: '/portofolio',
+    query: {
+      tab: 'client',
+      search: name,
+    },
+  })
+}
 
 const whyItems = [
   {
@@ -202,6 +215,7 @@ const whyItems = [
           v-for="(img, i) in loopImages"
           :key="i"
           class="marquee-item"
+          @click="goToClient(img.name)"
           data-bs-toggle="tooltip"
           data-bs-placement="top"
           :title="img.name"
@@ -336,6 +350,7 @@ const whyItems = [
 .marquee-item {
   flex: 0 0 auto;
   position: relative;
+  cursor: pointer;
 
   height: 45px; /* penting: lebih besar dari img */
   display: flex;
