@@ -1,164 +1,111 @@
 <script setup>
-// =========================
-// IMPORT
-// =========================
-import { ref } from 'vue'
-
-// =========================
-// DATA TEAM
-// =========================
-const team = ref([
-  {
-    name: 'bima',
-    role: 'Leader',
-    photo: '/images/Content/test.jpg',
-    links: [
-      { name: 'Instagram', url: '#' },
-      { name: 'GitHub', url: '#' },
-      { name: 'Portfolio', url: '#' },
-    ],
-  },
-  {
-    name: 'abid',
-    role: 'Enginer',
-    photo: '/images/Content/test.jpg',
-    links: [
-      { name: 'Instagram', url: '#' },
-      { name: 'GitHub', url: '#' },
-    ],
-  },
-  {
-    name: 'syifa',
-    role: 'Designer',
-    photo: '/images/Content/test.jpg',
-    links: [
-      { name: 'Instagram', url: '#' },
-      { name: 'Dribbble', url: '#' },
-    ],
-  },
-])
-
-// =========================
-// STATE
-// =========================
-const activeIndex = ref(null)
-
-// =========================
-// METHODS
-// =========================
-const toggle = (i) => {
-  activeIndex.value = activeIndex.value === i ? null : i
-}
+import DeveloperData from '@/data/dev/DeveloperData'
 </script>
 
 <template>
+  <div>
+    <!-- HERO -->
 
-  <!-- ========================= -->
-  <!-- HEADER SECTION -->
-  <!-- ========================= -->
-  <section class="developer-header-section py-5 text-center text-white" style="background: #ffc107">
-    <div class="container">
-      <h1 class="fw-bold text-dark">Tim Pengembang</h1>
-      <p class="text-dark">Orang-orang di balik website ini</p>
-    </div>
-  </section>
+    <section class="position-relative vh-100 overflow-hidden">
+      <!-- Background -->
+      <img
+        src="https://placehold.co/1600x900"
+        alt="Hero Background"
+        class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+      />
 
+      <!-- Overlay -->
+      <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75"></div>
 
-  <!-- ========================= -->
-  <!-- ABOUT TEAM SECTION -->
-  <!-- ========================= -->
-  <section class="developer-about-section container py-5 text-center">
-    <h2 class="fw-bold mb-3">Tentang Tim</h2>
-    <p class="text-muted mx-auto" style="max-width: 700px">
-      Tim ini terdiri dari siswa PKL SMK Negeri Mojoagung yang terlibat dalam proses perancangan dan
-      pengembangan website ini. Bagi kami, proyek ini bukan hanya sekadar tugas, tetapi juga
-      pengalaman berharga untuk belajar, berkolaborasi, dan menciptakan sesuatu yang dapat
-      memberikan manfaat nyata.
-    </p>
-  </section>
+      <!-- Content -->
+      <div
+        class="container position-absolute top-50 start-50 translate-middle text-center text-white"
+      >
+        <span class="badge bg-warning text-dark px-3 py-2 mb-3"> Makna Consulting </span>
 
+        <h1 class="display-3 fw-bold mb-4">Pengembang Website</h1>
 
-  <!-- ========================= -->
-  <!-- TEAM LIST SECTION -->
-  <!-- ========================= -->
-  <section class="developer-team-section container py-5">
-
-    <div v-for="(member, i) in team" :key="i" class="mb-4">
-
-      <!-- CARD MEMBER -->
-      <div class="card shadow-sm border-0 p-3 team-card" @click="toggle(i)">
-
-        <div class="d-flex align-items-center gap-3">
-
-          <!-- PHOTO -->
-          <img
-            :src="member.photo"
-            class="rounded-circle"
-            style="width: 70px; height: 70px; object-fit: cover"
-          />
-
-          <!-- INFO -->
-          <div>
-            <h5 class="fw-bold mb-1">{{ member.name }}</h5>
-            <p class="text-muted small mb-0">{{ member.role }}</p>
-          </div>
-
-        </div>
-
-        <!-- EXPAND DETAIL -->
-        <div v-if="activeIndex === i" class="mt-3">
-          <hr />
-
-          <!-- SOCIAL LINKS -->
-          <div class="d-flex flex-wrap gap-2">
-            <a
-              v-for="(link, j) in member.links"
-              :key="j"
-              :href="link.url"
-              target="_blank"
-              class="btn btn-outline-warning btn-sm"
-            >
-              {{ link.name }}
-            </a>
-          </div>
-
-        </div>
-
+        <p class="lead col-lg-8 mx-auto text-light">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor, impedit.
+        </p>
       </div>
+    </section>
+    <!-- ABOUT -->
 
-    </div>
-
-  </section>
-
-
-  <!-- ========================= -->
-  <!-- CTA SECTION -->
-  <!-- ========================= -->
-  <section class="developer-cta-section py-5 text-center bg-light">
-    <div class="container">
+    <section class="container py-5 text-center">
       <h2 class="fw-bold mb-3">
-        Tertarik untuk mengenal lebih jauh?
+        {{ DeveloperData.about.title }}
       </h2>
 
-      <p class="text-muted">
-        Kamu bisa langsung menghubungi kami melalui kontak yang tersedia di atas
+      <p class="text-muted mx-auto" style="max-width: 800px">
+        {{ DeveloperData.about.description }}
       </p>
-    </div>
-  </section>
+    </section>
 
+    <!-- TEAM -->
+
+    <section class="container py-5">
+      <div class="row g-4">
+        <div
+          v-for="(member, index) in DeveloperData.members"
+          :key="index"
+          class="col-lg-4 col-md-6"
+        >
+          <div class="card h-100 border-0 shadow-sm overflow-hidden">
+            <!-- IMAGE -->
+
+            <img
+              :src="member.photo"
+              class="card-img-top"
+              style="height: 300px; object-fit: cover"
+            />
+
+            <div class="card-body p-4">
+              <div class="mb-3">
+                <h4 class="fw-bold mb-1">
+                  {{ member.name }}
+                </h4>
+
+                <span class="badge bg-warning text-dark">
+                  {{ member.role }}
+                </span>
+              </div>
+
+              <p class="text-muted">
+                {{ member.bio }}
+              </p>
+
+              <div class="bg-light rounded p-3 small fst-italic mb-3">
+                {{ member.quote }}
+              </div>
+
+              <div class="d-flex gap-2">
+                <a
+                  v-for="(social, i) in member.socials"
+                  :key="i"
+                  :href="social.link"
+                  target="_blank"
+                  class="btn btn-outline-dark rounded-circle"
+                >
+                  <i :class="['bi', social.icon]"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+
+    <section class="bg-light py-5">
+      <div class="container text-center">
+        <h2 class="fw-bold">Mari Berkembang Bersama</h2>
+
+        <p class="text-muted">
+          Kolaborasi, pembelajaran, dan pengalaman menjadi bagian dari perjalanan kami.
+        </p>
+      </div>
+    </section>
+  </div>
 </template>
-
-<style scoped>
-/* ========================= */
-/* TEAM CARD */
-/* ========================= */
-.team-card {
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.team-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-</style>

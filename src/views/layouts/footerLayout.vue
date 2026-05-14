@@ -90,9 +90,9 @@ const pages = [
 
     <!-- COPYRIGHT -->
     <div class="text-center py-3 border-top small px-3">
-      © 2026 Makna Consulting — Developed by
+      © 2026 Makna Consulting — 
       <router-link to="/Developer" class="dev-link">
-        Tim PKL SMK Negeri Mojoagung
+        by Developer
       </router-link>
     </div>
 

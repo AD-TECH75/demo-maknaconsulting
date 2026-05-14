@@ -1,71 +1,104 @@
+<script setup>
+import { contactData } from '@/data/contact/ContactData'
+</script>
+
 <template>
-  <!-- HEADER -->
-  <section class="contact-header-section py-5 text-center text-white" style="background: #ffc107">
+  <!-- Hero Section -->
+  <!-- Hero Section dengan Gambar Latar Belakang -->
+  <section class="position-relative vh-100 overflow-hidden">
+    <!-- Background -->
+    <img
+      src="https://placehold.co/1600x900"
+      alt="Hero Background"
+      class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+    />
+
+    <!-- Overlay -->
+    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75"></div>
+
+    <!-- Content -->
+    <div
+      class="container position-absolute top-50 start-50 translate-middle text-center text-white"
+    >
+      <span class="badge bg-warning text-dark px-3 py-2 mb-3"> Makna Consulting </span>
+
+      <h1 class="display-3 fw-bold mb-4">Hubungi Kami</h1>
+
+      <p class="lead col-lg-8 mx-auto text-light">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor, impedit.
+      </p>
+    </div>
+  </section>
+  <section class="py-5 bg-body">
     <div class="container">
-      <h1 class="fw-bold text-dark">Hubungi Kami</h1>
-      <p class="text-dark">Pilih cara termudah untuk terhubung dengan kami</p>
-    </div>
-  </section>
+      <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold text-body-emphasis">Hubungi Kami</h1>
 
-  <!-- CONTACT OPTIONS -->
-  <section class="contact-options-section container py-5">
-    <div class="row g-4 justify-content-center">
-      <!-- WhatsApp -->
-      <div class="col-md-4">
-        <a href="https://wa.me/6287846395250" target="_blank" class="text-decoration-none">
-          <div class="card h-100 text-center shadow border-0 p-4 contact-card">
-            <i class="bi bi-whatsapp fs-1 text-success mb-3"></i>
-            <h5 class="fw-bold">WhatsApp</h5>
-            <p class="text-muted">Chat langsung dengan tim kami</p>
-          </div>
-        </a>
+        <p class="text-secondary col-lg-6 mx-auto">Pilih platform favoritmu dan hubungi kami</p>
       </div>
 
-      <!-- Instagram -->
-      <div class="col-md-4">
-        <a href="https://instagram.com/username" target="_blank" class="text-decoration-none">
-          <div class="card h-100 text-center shadow border-0 p-4 contact-card">
-            <i class="bi bi-instagram fs-1 text-danger mb-3"></i>
-            <h5 class="fw-bold">Instagram</h5>
-            <p class="text-muted">Lihat aktivitas & update terbaru</p>
-          </div>
-        </a>
-      </div>
+      <div class="row g-4 justify-content-center">
+        <div v-for="item in contactData" :key="item.title" class="col-md-6 col-lg-3">
+          <a :href="item.link" target="_blank" class="text-decoration-none text-reset">
+            <div class="card h-100 border-0 shadow-sm text-center p-4 contact-card">
+              <div class="contact-icon mx-auto" :class="[item.iconBg, item.iconColor]">
+                <i :class="['bi', item.icon]"></i>
+              </div>
 
-      <!-- TikTok (fallback) -->
-      <div class="col-md-4">
-        <a href="https://tiktok.com/@username" target="_blank" class="text-decoration-none">
-          <div class="card h-100 text-center shadow border-0 p-4 contact-card">
-            <i class="bi bi-tiktok fs-1 mb-3"></i>
-            <h5 class="fw-bold">TikTok</h5>
-            <p class="text-muted">Konten singkat & insight menarik</p>
-          </div>
-        </a>
-      </div>
+              <h5 class="fw-bold">
+                {{ item.title }}
+              </h5>
 
-      <!-- Email -->
-      <div class="col-md-4">
-        <a href="mailto:email@makna.com" class="text-decoration-none">
-          <div class="card h-100 text-center shadow border-0 p-4 contact-card">
-            <i class="bi bi-envelope-fill fs-1 text-warning mb-3"></i>
-            <h5 class="fw-bold">Email</h5>
-            <p class="text-muted">Untuk komunikasi formal</p>
-          </div>
-        </a>
+              <p class="text-secondary mb-3">
+                {{ item.description }}
+              </p>
+
+              <span class="badge text-bg-light border">
+                {{ item.username }}
+              </span>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </section>
-   
 </template>
 
 <style scoped>
 .contact-card {
   transition: 0.3s;
-  cursor: pointer;
+  border-radius: 1.3rem;
 }
 
 .contact-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px);
+}
+
+.contact-icon {
+  width: 75px;
+  height: 75px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 2rem;
+
+  border-radius: 50%;
+
+  margin-bottom: 20px;
+  .hero-section {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    inset: 0;
+  }
 }
 </style>

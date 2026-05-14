@@ -1,8 +1,8 @@
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue'
 import { Tooltip } from 'bootstrap'
 import { images } from '@/data/home/TooltipData.js'
-import { services } from '@/data/sevices/servicesData'
+import { highlightedServices } from '@/data/services/ServiceData'
 
 // ===============================
 // HERO SLIDES (PAKAI LINK)
@@ -65,7 +65,17 @@ const whyItems = [
     link: '/services',
   },
 ]
-window.location.hash = "home";
+
+const targetSection = ref(null)
+
+onMounted(async () => {
+  await nextTick()
+
+  targetSection.value?.scrollIntoView({
+    behavior: 'smooth',
+    block: 'center',
+  })
+})
 </script>
 
 <template>
@@ -112,7 +122,6 @@ window.location.hash = "home";
 
         <!-- Layer 4 -->
         <path
-        id="home"
           class="path-3"
           d="M 0,600 L 0,450 C 35.27634043733771,420.9894392428234 70.55268087467542,391.97887848564676 107,405 C 143.44731912532458,418.02112151435324 181.06561693863608,473.07392530023645 220,473 C 258.9343830613639,472.92607469976355 299.1848513707802,417.72542031340726 340,407 C 380.8151486292198,396.27457968659274 422.1949775782432,430.0243934461345 455,436 C 487.8050224217568,441.9756065538655 512.0352383162473,420.17700590205453 549,426 C 585.9647616837527,431.82299409794547 635.6640691567678,465.2675829456474 678,478 C 720.3359308432322,490.7324170543526 755.3084850566815,482.75266231535556 784,481 C 812.6915149433185,479.24733768464444 835.1019906165061,483.72176779293034 873,476 C 910.8980093834939,468.27823220706966 964.2835524772945,448.36026651292315 1002,436 C 1039.7164475227055,423.63973348707685 1061.763799474316,418.8371661553769 1090,432 C 1118.236200525684,445.1628338446231 1152.6612496254409,476.2910688655691 1200,468 C 1247.3387503745591,459.7089311344309 1307.5912020239198,411.9985583823468 1349,410 C 1390.4087979760802,408.0014416176532 1412.97394227888,451.7146976050438 1425,466 C 1437.02605772112,480.2853023949562 1438.51302886056,465.14265119747813 1440,450 L 1440,600 L 0,600 Z"
           fill="#fcb900"
@@ -130,7 +139,7 @@ window.location.hash = "home";
           inventore adipisci officiis laudantium obcaecati itaque quis? Et, consequatur? Reiciendis
           sunt voluptate id.
         </p>
-        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5" ref="targetSection">
           <button type="button" class="btn btn-dark btn-lg px-4 me-sm-3">Pelajari Layanan</button>
           <button type="button" class="btn btn-outline-dark btn-lg px-4">Hubungi Kami</button>
         </div>
@@ -221,18 +230,21 @@ window.location.hash = "home";
     </div>
 
     <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4">
-      <div class="col" v-for="service in services" :key="service.id">
+      <div class="col" v-for="(service, i) in highlightedServices" :key="i">
         <div
           class="card card-cover h-100 overflow-hidden text-white rounded-5 shadow-lg service-card"
           :style="{
-            backgroundImage: `linear-gradient(
-            rgba(0,0,0,0.45),
-            rgba(0,0,0,0.6)
-          ), url(${service.image})`,
+            backgroundImage: `
+          linear-gradient(
+          rgba(0,0,0,.45),
+          rgba(0,0,0,.65)
+          ),
+          url(${service.image})
+          `,
           }"
         >
           <div class="d-flex flex-column h-100 p-5 pb-3">
-            <span class="badge bg-warning text-dark w-fit mb-3">
+            <span v-if="service.category" class="badge bg-warning text-dark w-fit mb-3">
               {{ service.category }}
             </span>
 
@@ -245,7 +257,7 @@ window.location.hash = "home";
             </p>
 
             <div class="mt-auto d-flex justify-content-between align-items-center">
-              <small>
+              <small v-if="service.duration">
                 {{ service.duration }}
               </small>
 
@@ -280,7 +292,9 @@ window.location.hash = "home";
         <div class="col-md-6 p-5">
           <h2 class="fw-bold mb-3">Hasil Karya Kami</h2>
           <p class="text-muted mb-4">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio magnam quo rerum assumenda porro minima necessitatibus beatae perferendis minus odit earum perspiciatis placeat aliquid, saepe ullam consequuntur qui tenetur in?
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio magnam quo rerum
+            assumenda porro minima necessitatibus beatae perferendis minus odit earum perspiciatis
+            placeat aliquid, saepe ullam consequuntur qui tenetur in?
           </p>
 
           <!-- Tombol Arahkan ke PortofolioView.vue -->
@@ -291,7 +305,7 @@ window.location.hash = "home";
       </div>
     </div>
   </section>
-    <!--
+  <!--
 ╔══════════════════════════════════════╗
 ║              TRUSTED BY              ║
 ╚══════════════════════════════════════╝
@@ -313,7 +327,6 @@ window.location.hash = "home";
       </div>
     </div>
   </section>
-
 
   <section class="home-why-section bg-light py-5">
     <div class="container text-center">

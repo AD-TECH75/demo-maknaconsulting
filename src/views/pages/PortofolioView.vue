@@ -88,9 +88,48 @@ const highlightText = (text) => {
 }
 
 const activeTab = ref(route.query.tab || 'testimoni')
+
+const goToProject = (clientName) => {
+  activeTab.value = 'pengalaman'
+  searchQuery.value = clientName
+
+  // scroll halus ke atas section
+  setTimeout(() => {
+    document.getElementById('projectAccordion')?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+    })
+  }, 100)
+}
 </script>
 
 <template>
+  <!-- Hero Section -->
+  <!-- Hero Section dengan Gambar Latar Belakang -->
+  <section class="position-relative vh-100 overflow-hidden">
+    <!-- Background -->
+    <img
+      src="https://placehold.co/1600x900"
+      alt="Hero Background"
+      class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+    />
+
+    <!-- Overlay -->
+    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75"></div>
+
+    <!-- Content -->
+    <div
+      class="container position-absolute top-50 start-50 translate-middle text-center text-white"
+    >
+      <span class="badge bg-warning text-dark px-3 py-2 mb-3"> Makna Consulting </span>
+
+      <h1 class="display-3 fw-bold mb-4">Portofolio Kami</h1>
+
+      <p class="lead col-lg-8 mx-auto text-light">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor, impedit.
+      </p>
+    </div>
+  </section>
   <section class="container py-5">
     <!-- Header -->
     <div class="text-center mb-5">
@@ -324,6 +363,8 @@ const activeTab = ref(route.query.tab || 'testimoni')
 
               <p class="client-subtitle">Beberapa client dan partner yang pernah bekerja sama</p>
             </div>
+
+            <!-- Search -->
             <div class="row justify-content-center mb-5">
               <div class="col-md-6">
                 <div class="input-group shadow-sm">
@@ -348,7 +389,7 @@ const activeTab = ref(route.query.tab || 'testimoni')
                 :key="index"
                 class="col-6 col-sm-4 col-md-3 col-lg-2"
               >
-                <div class="client-card">
+                <div class="client-card" @click="goToProject(item.name)">
                   <!-- Logo -->
                   <div class="client-logo-wrapper">
                     <img :src="item.src" :alt="item.name" class="client-logo" />
