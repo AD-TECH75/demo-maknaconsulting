@@ -2,7 +2,6 @@
 import { ref, computed } from 'vue'
 import { highlightedServices, allServices } from '@/data/services/ServiceData'
 import AOS from 'aos'
-import 'aos/dist/aos.css'
 
 AOS.init({
   duration: 800,

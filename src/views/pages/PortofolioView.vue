@@ -6,7 +6,12 @@ import { images } from '@/data/home/TooltipData.js'
 import { statistik } from '@/data/portofolio/StatistikData.js'
 import { onMounted } from 'vue'
 import { useRoute } from 'vue-router'
+import AOS from 'aos'
 
+AOS.init({
+  duration: 800,
+  once: false,
+})
 
 const route = useRoute()
 const searchQuery = ref('')

@@ -4,7 +4,7 @@ import { Tooltip } from 'bootstrap'
 import { images } from '@/data/home/TooltipData.js'
 import { highlightedServices } from '@/data/services/ServiceData'
 import AOS from 'aos'
-import 'aos/dist/aos.css'
+
 
 AOS.init({
   duration: 800,
