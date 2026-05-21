@@ -7,7 +7,6 @@ import { statistik } from '@/data/portofolio/StatistikData.js'
 import { onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import AOS from 'aos'
-import 'aos/dist/aos.css'
 
 AOS.init({
   duration: 800,

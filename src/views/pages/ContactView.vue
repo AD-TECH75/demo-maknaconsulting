@@ -1,13 +1,12 @@
 <script setup>
 import { contactData } from '@/data/contact/ContactData'
 import AOS from 'aos'
-import 'aos/dist/aos.css'
+
 
 AOS.init({
   duration: 800,
   once: false,
 })
-
 </script>
 
 <template>
@@ -40,13 +39,20 @@ AOS.init({
   <section class="py-5 bg-body">
     <div class="container">
       <div class="text-center mb-5" data-aos="slide-up">
-        <h1 class="display-5 fw-bold text-body-emphasis"  data-aos="flip-right">Hubungi Kami</h1>
+        <h1 class="display-5 fw-bold text-body-emphasis" data-aos="flip-right">Hubungi Kami</h1>
 
-        <p class="text-secondary col-lg-6 mx-auto" data-aos="flip-left">Pilih platform favoritmu dan hubungi kami</p>
+        <p class="text-secondary col-lg-6 mx-auto" data-aos="flip-left">
+          Pilih platform favoritmu dan hubungi kami
+        </p>
       </div>
 
       <div class="row g-4 justify-content-center" data-aos="slide-up">
-        <div v-for="item in contactData" :key="item.title" class="col-md-6 col-lg-3" data-aos="flip-right">
+        <div
+          v-for="item in contactData"
+          :key="item.title"
+          class="col-md-6 col-lg-3"
+          data-aos="flip-right"
+        >
           <a :href="item.link" target="_blank" class="text-decoration-none text-reset">
             <div class="card h-100 border-0 shadow-sm text-center p-4 contact-card">
               <div class="contact-icon mx-auto" :class="[item.iconBg, item.iconColor]">
@@ -95,18 +101,18 @@ AOS.init({
   border-radius: 50%;
 
   margin-bottom: 20px;
-  .hero-section {
-    min-height: 70vh;
-    display: flex;
-    align-items: center;
-  }
+}
+.hero-section {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
 
-  .hero-bg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    inset: 0;
-  }
+.hero-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  inset: 0;
 }
 </style>

@@ -4,9 +4,9 @@ import { Tooltip } from 'bootstrap'
 import { images } from '@/data/home/TooltipData.js'
 import { highlightedServices } from '@/data/services/ServiceData'
 import AOS from 'aos'
-import 'aos/dist/aos.css'
  import WaveOne from '@/data/home/wave1.vue'
 //import WaveTwo from '@/data/home/wave2.vue'
+
 
 AOS.init({
   duration: 800,
