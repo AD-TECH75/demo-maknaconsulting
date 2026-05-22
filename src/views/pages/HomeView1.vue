@@ -182,20 +182,21 @@ onMounted(async () => {
     block: 'center',
   })
 })
+
 </script>
 
 <template>
   <!-- =========================================================
        HERO & SVG WAVE SECTION
        ========================================================= -->
-  <section>
+  <section ref="targetSection">
     <WaveOne />
   </section>
 
   <!-- =========================================================
        ABOUT INTRO SECTION
        ========================================================= -->
-  <section class="home-about-section container my-5" data-aos="fade-right">
+  <section class="home-about-section container my-5" data-aos="fade-right" data-aos-once="false">
     <div class="text-center mb-4">
       <!-- Section Title -->
       <h2 class="fw-bold text-uppercase">Makna Consulting</h2>
@@ -212,14 +213,14 @@ onMounted(async () => {
        ========================================================= -->
   <section class="container px-4 py-5" id="custom-cards">
     <!-- Section Heading -->
-    <div class="text-center mb-5" data-aos="fade-left">
+    <div class="text-center mb-5" data-aos="fade-left" data-aos-once="false">
       <h2 class="fw-bold display-5">Our Services</h2>
 
       <p class="text-muted">Solusi profesional untuk kebutuhan bisnis Anda</p>
     </div>
 
     <!-- Services Grid -->
-    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4" data-aos="flip-left">
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4" data-aos="flip-left" data-aos-once="false" data-aos-duration="600">
       <div class="col" v-for="(service, i) in highlightedServices" :key="i">
         <!-- Service Card -->
         <div
@@ -234,7 +235,7 @@ onMounted(async () => {
             `,
           }"
         >
-          <div class="d-flex flex-column h-100 p-5 pb-3" data-aos="flip-left">
+          <div class="d-flex flex-column h-100 p-5 pb-3" data-aos="flip-left" data-aos-once="false">
             <!-- Category Badge -->
             <span v-if="service.category" class="badge bg-warning text-dark w-fit mb-3">
               {{ service.category }}
@@ -275,6 +276,7 @@ onMounted(async () => {
       <div
         class="row align-items-center bg-light rounded-4 overflow-hidden shadow-sm"
         data-aos="fade-right"
+        data-aos-once="false"
       >
         <!-- Portfolio Image -->
         <div class="col-md-6 p-0">
@@ -287,7 +289,7 @@ onMounted(async () => {
         </div>
 
         <!-- Portfolio Description -->
-        <div class="col-md-6 p-5" data-aos="fade-left">
+        <div class="col-md-6 p-5" data-aos="fade-left" data-aos-once="false">
           <h2 class="fw-bold mb-3">Hasil Karya Kami</h2>
 
           <p class="text-muted mb-4">
@@ -309,12 +311,12 @@ onMounted(async () => {
   <!-- =========================================================
        TRUSTED BY SECTION
        ========================================================= -->
-  <section class="home-trusted-section container py-4 bg-white" data-aos="flip-up">
+  <section class="home-trusted-section container py-4 bg-white" data-aos="flip-up" data-aos-once="false">
     <!-- Section Label -->
     <p class="text-center fw-semibold">Dipercaya oleh:</p>
 
     <!-- Logo Marquee -->
-    <div class="marquee-wrapper" data-aos="flip-down">
+    <div class="marquee-wrapper" data-aos="flip-down" data-aos-once="false">
       <div class="marquee-track">
         <!-- Logo Item -->
         <div
@@ -340,7 +342,7 @@ onMounted(async () => {
       <h2 class="fw-bold mb-3">Kenapa Makna Consulting?</h2>
 
       <!-- Why Cards -->
-      <div class="row g-4 mt-3" data-aos="flip-up">
+      <div class="row g-4 mt-3" data-aos="flip-up" data-aos-once="false">
         <div class="col-md-4" v-for="(item, index) in whyItems" :key="index">
           <router-link :to="item.link" class="text-decoration-none">
             <div class="p-4 bg-white shadow rounded h-100 why-card">

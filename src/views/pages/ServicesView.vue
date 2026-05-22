@@ -2,7 +2,6 @@
 // Services page component: manages featured services, searchable service list, and highlight rendering.
 import { ref, computed } from 'vue'
 import { highlightedServices, allServices } from '@/data/services/ServiceData'
-
 const search = ref('')
 
 const filteredServices = computed(() => {

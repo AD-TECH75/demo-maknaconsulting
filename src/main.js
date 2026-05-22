@@ -15,9 +15,12 @@ import 'bootstrap'
 import 'aos/dist/aos.css'
 import AOS from 'aos'
 
+import { onMounted } from 'vue'
+
 AOS.init({
   duration: 800, // Animation duration in milliseconds.
   once: false, // Re-trigger animations every time elements re-enter the viewport.
+  mirror: true
 })
 
 // Initialize and mount the Vue application instance.
@@ -25,3 +28,9 @@ const app = createApp(App)
 
 app.use(router) // Register Vue Router plugin.
 app.mount('#app') // Mount application to the root DOM element.
+
+
+onMounted(() => {
+  // Memaksa AOS menghitung ulang posisi koordinat semua elemen di layar
+  AOS.refresh()
+})

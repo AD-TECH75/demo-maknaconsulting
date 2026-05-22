@@ -8,7 +8,7 @@ import { contactData } from '@/data/contact/ContactData'
   ========================= -->
 
   <!-- Fullscreen hero section with background image -->
-  <section class="position-relative vh-100 overflow-hidden" data-aos="zoom-in">
+  <section class="position-relative vh-100 overflow-hidden" data-aos="zoom-in" data-aos-once="false">
     <!-- Background image -->
     <img
       src="https://placehold.co/1600x900"
@@ -43,22 +43,23 @@ import { contactData } from '@/data/contact/ContactData'
   <section class="py-5 bg-body">
     <div class="container">
       <!-- Section heading -->
-      <div class="text-center mb-5" data-aos="slide-up">
-        <h1 class="display-5 fw-bold text-body-emphasis" data-aos="flip-right">Hubungi Kami</h1>
+      <div class="text-center mb-5" data-aos="slide-up" data-aos-once="false">
+        <h1 class="display-5 fw-bold text-body-emphasis" data-aos="flip-right" data-aos-once="false">Hubungi Kami</h1>
 
-        <p class="text-secondary col-lg-6 mx-auto" data-aos="flip-left">
+        <p class="text-secondary col-lg-6 mx-auto" data-aos="flip-left" data-aos-once="false">
           Pilih platform favoritmu dan hubungi kami
         </p>
       </div>
 
       <!-- Contact cards grid -->
-      <div class="row g-4 justify-content-center" data-aos="slide-up">
+      <div class="row g-4 justify-content-center" data-aos="slide-up" data-aos-once="false">
         <!-- Loop through all contact items -->
         <div
           v-for="item in contactData"
           :key="item.title"
           class="col-md-6 col-lg-3"
           data-aos="flip-right"
+          data-aos-once="false"
         >
           <!-- Clickable contact card -->
           <a :href="item.link" target="_blank" class="text-decoration-none text-reset">

@@ -187,7 +187,7 @@ const searchEnter = () => {
 
       <div id="navbarContent" class="collapse navbar-collapse">
         <!-- Navigation menu list -->
-        <ul class="navbar-nav mx-auto align-items-lg-center w-100 w-lg-auto">
+        <ul class="navbar-nav mx-auto align-items-lg-center w-100 w-lg-auto mb-2 mb-lg-0" style="max-width: 600px">
           <li v-for="menu in menus" :key="menu.path" class="nav-item">
             <router-link
               :to="menu.path"

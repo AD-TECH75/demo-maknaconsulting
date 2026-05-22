@@ -9,7 +9,7 @@ import AboutData from '@/data/about/AboutData'
     ========================= -->
 
     <!-- Fullscreen hero section with background image -->
-    <section class="position-relative vh-100 overflow-hidden" data-aos="zoom-in">
+    <section class="position-relative vh-100 overflow-hidden" data-aos="zoom-in" data-aos-once="false">
       <!-- Background image -->
       <img
         src="https://placehold.co/1600x900"
@@ -41,8 +41,8 @@ import AboutData from '@/data/about/AboutData'
          STORY SECTION
     ========================= -->
 
-    <section class="py-5" data-aos="zoom-in-up">
-      <div class="container" data-aos="slide-up">
+    <section class="py-5" data-aos="zoom-in-up" data-aos-once="false">
+      <div class="container" data-aos="slide-up" data-aos-once="false">
         <!-- Loop through all story items -->
         <div
           v-for="(item, index) in AboutData.stories"
@@ -50,34 +50,36 @@ import AboutData from '@/data/about/AboutData'
           class="row align-items-center g-5 mb-5"
           :class="{ 'flex-row-reverse': item.reverse }"
           data-aos="flip-right"
+          data-aos-once="false"
         >
           <!-- Story image -->
-          <div class="col-lg-6" data-aos="flip-left">
+          <div class="col-lg-6" data-aos="flip-left" data-aos-once="false">
             <img :src="item.image" class="img-fluid rounded-4 shadow" />
           </div>
 
           <!-- Story content -->
-          <div class="col-lg-6" data-aos="flip-right">
+          <div class="col-lg-6" data-aos="flip-right" data-aos-once="false">
             <!-- Story number -->
             <span class="text-warning fw-bold"> 0{{ index + 1 }} </span>
 
             <!-- Story title -->
-            <h2 class="fw-bold mb-4" data-aos="flip-left">
+            <h2 class="fw-bold mb-4" data-aos="flip-left" data-aos-once="false">
               {{ item.title }}
             </h2>
 
             <!-- Story description -->
-            <p v-if="item.description" class="text-secondary" data-aos="flip-right">
+            <p v-if="item.description" class="text-secondary" data-aos="flip-right" data-aos-once="false">
               {{ item.description }}
             </p>
 
             <!-- Story values list -->
-            <ul v-if="item.values" class="list-group list-group-flush" data-aos="flip-left">
+            <ul v-if="item.values" class="list-group list-group-flush" data-aos="flip-left" data-aos-once="false">
               <li
                 v-for="(value, i) in item.values"
                 :key="i"
                 class="list-group-item px-0"
                 data-aos="flip-right"
+                data-aos-once="false"
               >
                 <!-- Check icon -->
                 <i class="bi bi-check-circle-fill text-warning me-2"></i>
@@ -95,7 +97,7 @@ import AboutData from '@/data/about/AboutData'
     ========================= -->
 
     <section class="py-5 bg-light">
-      <div class="container" data-aos="slide-up">
+      <div class="container" data-aos="slide-up" data-aos-once="false">
         <!-- Section heading -->
         <div class="text-center mb-5">
           <h2 class="fw-bold">
@@ -106,13 +108,14 @@ import AboutData from '@/data/about/AboutData'
         </div>
 
         <!-- Services grid -->
-        <div class="row g-4" data-aos="slide-down">
+        <div class="row g-4" data-aos="slide-down" data-aos-once="false">
           <!-- Loop through all services -->
           <div
             v-for="(service, index) in AboutData.services.items"
             :key="index"
             class="col-md-4"
             data-aos="flip-up"
+            data-aos-once="false"
           >
             <!-- Service card -->
             <div class="card h-100 border-0 shadow-sm p-4 text-center">
@@ -148,7 +151,7 @@ import AboutData from '@/data/about/AboutData'
         </div>
 
         <!-- Team members grid -->
-        <div class="row g-4" data-aos="flip-right">
+        <div class="row g-4" data-aos="flip-right" data-aos-once="false">
           <!-- Loop through team members -->
           <div v-for="(member, index) in AboutData.team.members" :key="index" class="col-md-4">
             <!-- Team member card -->
@@ -158,15 +161,16 @@ import AboutData from '@/data/about/AboutData'
                 :src="member.image"
                 class="rounded-circle team-image mx-auto mb-3"
                 data-aos="slide-left"
+                data-aos-once="false"
               />
 
               <!-- Member name -->
-              <h5 class="fw-bold" data-aos="slide-right">
+              <h5 class="fw-bold" data-aos="slide-right" data-aos-once="false">
                 {{ member.name }}
               </h5>
 
               <!-- Member position -->
-              <p class="text-muted" data-aos="slide-left">
+              <p class="text-muted" data-aos="slide-left" data-aos-once="false">
                 {{ member.position }}
               </p>
             </div>
@@ -188,23 +192,24 @@ import AboutData from '@/data/about/AboutData'
               :src="AboutData.cta.image"
               class="img-fluid rounded-4 shadow"
               data-aos="flip-left"
+              data-aos-once="false"
             />
           </div>
 
           <!-- CTA content -->
           <div class="col-lg-6 offset-lg-1">
             <!-- CTA badge -->
-            <span class="text-warning fw-bold" data-aos="slide-left">
+            <span class="text-warning fw-bold" data-aos="slide-left" data-aos-once="false">
               {{ AboutData.cta.badge }}
             </span>
 
             <!-- CTA title -->
-            <h2 class="display-6 fw-bold my-4" data-aos="slide-left">
+            <h2 class="display-6 fw-bold my-4" data-aos="slide-left" data-aos-once="false">
               {{ AboutData.cta.title }}
             </h2>
 
             <!-- CTA description -->
-            <p class="text-muted" data-aos="slide-left">
+            <p class="text-muted" data-aos="slide-left" data-aos-once="false">
               {{ AboutData.cta.description }}
             </p>
 
@@ -214,6 +219,7 @@ import AboutData from '@/data/about/AboutData'
                 to="/contact"
                 class="btn btn-warning px-4 rounded-pill"
                 data-aos="flip-right"
+                data-aos-once="false"
               >
                 Hubungi Kami
               </router-link>
