@@ -312,28 +312,7 @@ const goToProject = (clientName) => {
                       <strong>Lokasi</strong>
                       <p class="mb-0" v-html="highlightText(project.location)"></p>
                     </div>
-
-                    <div class="col-md-6">
-                      <strong>Nilai</strong>
-                      <p class="mb-0">{{ project.value }}</p>
-                    </div>
-
-                    <div class="col-md-6">
-                      <strong>Nomor Kontrak</strong>
-                      <p class="mb-0">{{ project.contract }}</p>
-                    </div>
-
-                    <div class="col-md-6">
-                      <strong>Tanggal</strong>
-                      <p class="mb-0">{{ project.date }}</p>
-                    </div>
-
-                    <div class="col-md-6">
-                      <strong>Status</strong>
-                      <p class="mb-0" v-html="highlightText(project.status)"></p>
-                    </div>
-
-                    <div class="col-12">
+                   <div class="col-12">
                       <strong>Kategori</strong>
                       <p class="mb-0" v-html="highlightText(project.category)"></p>
                     </div>

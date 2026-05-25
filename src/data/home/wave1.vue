@@ -70,7 +70,7 @@ export default {
         <img
           src="https://placehold.co/700x500"
           class="img-fluid border rounded-3 shadow-lg mb-4"
-          alt="Example image"
+          alt=""
           width="700"
           height="500"
           loading="lazy"

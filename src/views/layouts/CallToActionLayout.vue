@@ -5,7 +5,7 @@
       <!-- Wrapper isi CTA agar lebar konten tidak terlalu full -->
       <div class="cta-content mx-auto">
         <!-- Judul utama CTA -->
-        <h2 class="fw-bold mb-3 text-dark px-2">Lorem ipsum dolor sit, amet</h2>
+        <h2 class="fw-bold mb-3 text-dark px-2 text-capitalize">bahagia tanpa koma</h2>
 
         <!-- Deskripsi / subtitle CTA -->
         <p class="mb-4 text-dark px-2">Konsultasikan kebutuhan Anda sekarang</p>

@@ -62,7 +62,7 @@ const router = createRouter({
 
 // Dynamically update the browser tab title after every route navigation.
 router.afterEach((to) => {
-  const CompanyName = 'Makna Computing'
+  const CompanyName = 'Makna Consulting'
 
   // Fallback to company name if route metadata title is unavailable.
   if (!to.meta.title) {

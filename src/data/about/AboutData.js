@@ -92,6 +92,12 @@ export default {
         name: 'Nama Tim',
         position: 'Consultant',
       },
+      {
+        image: 'https://placehold.co/300',
+        name: 'Nama Tim',
+        position: 'Consultant',
+      },
+      
     ],
   },
 
