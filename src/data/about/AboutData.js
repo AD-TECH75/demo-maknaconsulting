@@ -1,40 +1,37 @@
-// Static configuration object containing page content and section data.
+import img1 from '@/assets/home/hero/1.jpg'
+import img2 from '@/assets/home/hero/2.jpg'
+import img3 from '@/assets/home/hero/3.jpg'
+import img4 from '@/assets/home/hero/4.jpg'
+import ceo from '@/assets/about/ceo.png'
 export default {
-  hero: {
-    title: 'Makna Consulting',
-    subtitle: 'Meningkatkan kapasitas SDM & tata kelola organisasi secara profesional',
-    background: 'https://placehold.co/1600x700',
-  },
-
   // Content collection for storytelling and company profile sections.
   stories: [
     {
       title: 'Tentang Kami',
-      image: 'https://placehold.co/600x400',
+      image: img1,
       description:
-        'Makna Consulting merupakan bagian dari CV. Mapah Karya Natar yang bergerak dalam pengembangan SDM, konsultasi organisasi, tata kelola pemerintahan, serta penyelenggaraan berbagai pelatihan profesional.',
+        'Makna Consulting merupakan bagian dari CV. Mapah Karya Natar yang bergerak di bidang pengembangan SDM, konsultasi organisasi, peningkatan tata kelola pemerintahan, serta penyelenggaraan berbagai program pelatihan profesional berkualitas.',
     },
 
     {
       title: 'Latar Belakang',
-      image: 'https://placehold.co/600x400',
+      image: img2,
       reverse: true,
       description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit eligendi similique molestiae asperiores exercitationem unde dignissimos tenetur officiis. Illo quas architecto magni.',
+        'Lahir dari kebutuhan akan tata kelola organisasi yang adaptif, kami hadir untuk menjembatani tantangan sektor publik dan swasta. Kami berkomitmen menyediakan pendekatan berbasis data dan solusi nyata demi terciptanya efisiensi kinerja yang berkelanjutan.',
     },
 
     {
       title: 'Motivasi Kami',
-      image: 'https://placehold.co/600x400',
+      image: img3,
       description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus rem deleniti perspiciatis fugiat dolorem temporibus. Consequatur officia aspernatur.',
+        'Kami didorong oleh visi untuk menjadi mitra terpercaya yang mampu menginspirasi perubahan positif. Setiap program yang kami rancang bertujuan memberikan dampak nyata, memperkuat kapasitas individu, dan mendorong transformasi organisasi ke tingkat tertinggi.',
     },
 
     {
       title: 'Nilai & Filosofi',
-      image: 'https://placehold.co/600x400',
+      image: img4,
       reverse: true,
-
       values: [
         'Profesionalisme',
         'Integritas',
@@ -77,27 +74,67 @@ export default {
     members: [
       {
         image: 'https://placehold.co/300',
-        name: 'Nama Pemimpin',
-        position: 'CEO & Founder',
+        name: 'Umar Ragil Hidayat, S.Si, M.Psi',
+        position: 'CEO & Founder / Direktur',
+        division: 'Direksi',
       },
 
       {
         image: 'https://placehold.co/300',
-        name: 'Nama Tim',
-        position: 'Trainer Senior',
+        name: 'Rin Harianing, S.Sos',
+        position: 'Konsultan / Manager Operasional',
+        division: 'Konsultan',
       },
 
       {
         image: 'https://placehold.co/300',
-        name: 'Nama Tim',
-        position: 'Consultant',
+        name: 'Wawan Widiatmoko, S.T., M.Psi',
+        position: 'Senior Konsultan',
+        division: 'Konsultan',
       },
+
       {
         image: 'https://placehold.co/300',
-        name: 'Nama Tim',
-        position: 'Consultant',
+        name: 'Nuril Hidayati, S.Si',
+        position: 'Konsultan',
+        division: 'Konsultan',
       },
-      
+
+      {
+        image: 'https://placehold.co/300',
+        name: 'Zainab Tianotak, S.ST',
+        position: 'Konsultan',
+        division: 'Konsultan',
+      },
+
+      {
+        image: 'https://placehold.co/300',
+        name: 'Faryd Mahardy, S.Kom',
+        position: 'Staff',
+        division: '-',
+      },
+
+      // Website Development Team
+      {
+        image: 'https://placehold.co/300',
+        name: 'Bima Ghani Firmansyah',
+        position: 'Lead Web Developer',
+        division: 'Website Development Team',
+      },
+
+      {
+        image: 'https://placehold.co/300',
+        name: 'M. Abid Hafiz Alaudin',
+        position: 'Web Developer',
+        division: 'Website Development Team',
+      },
+
+      {
+        image: 'https://placehold.co/300',
+        name: "Syifa' Nur Anisyah",
+        position: 'UI/UX Designer',
+        division: 'Website Development Team',
+      },
     ],
   },
 
@@ -107,13 +144,13 @@ export default {
     title: 'Bersama kami, organisasi berkembang dengan strategi yang lebih bermakna',
 
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur expedita deleniti ducimus eaque rerum.',
+      'Menyediakan solusi konsultasi strategis, pelatihan profesional, dan pembenahan sistem kerja yang dirancang khusus untuk menjawab tantangan unik organisasi Anda.',
 
     // CTA visual asset displayed alongside promotional messaging.
-    image: 'https://placehold.co/500x700',
+    image: ceo,
 
-    name: 'Bapak Nama Tokoh',
+    name: 'Umar Ragil Hidayat, S.Si, M.Psi',
 
-    position: 'CEO & Founder',
+    position: 'CEO & FOUNDER/ Direktur',
   },
 }

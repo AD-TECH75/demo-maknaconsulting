@@ -1,9 +1,26 @@
 <script setup>
 // Services page component: manages featured services, searchable service list, and highlight rendering.
-import { ref, computed } from 'vue'
-import { highlightedServices, allServices } from '@/data/services/ServiceData'
-const search = ref('')
+import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { allServices } from '@/data/services/ServiceData'
+import HighlightedServices from '@/components/services/HighlightedServices.vue'
 
+import img1 from '@/assets/services/hero/1.png'
+import img2 from '@/assets/services/hero/2.png'
+import img3 from '@/assets/services/hero/3.png'
+const images = [img1, img2, img3]
+const currentImage = ref(0)
+let interval = null
+onMounted(() => {
+  interval = setInterval(() => {
+    currentImage.value = (currentImage.value + 1) % images.length
+  }, 2000)
+})
+onUnmounted(() => {
+  clearInterval(interval)
+})
+
+
+const search = ref('')
 const filteredServices = computed(() => {
   if (!search.value) return allServices
 
@@ -27,7 +44,8 @@ const highlightText = (text) => {
     <section class="position-relative vh-100 overflow-hidden" data-aos="zoom-in">
       <!-- Background image layer -->
       <img
-        src="https://placehold.co/1600x900"
+        :key="currentImage"
+        :src="images[currentImage]"
         alt="Hero Background"
         class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
       />
@@ -44,39 +62,14 @@ const highlightText = (text) => {
         <h1 class="display-3 fw-bold mb-4">Layanan Kami</h1>
 
         <p class="lead col-lg-8 mx-auto text-light">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor, impedit.
+          "Kami menyediakan berbagai layanan konsultasi strategis dan solusi bisnis terintegrasi
+          yang dirancang khusus untuk mendorong pertumbuhan serta efisiensi operasional organisasi
+          Anda."
         </p>
       </div>
     </section>
 
-    <!-- Featured services section -->
-    <section class="container py-5" data-aos="slide-up">
-      <div class="d-flex justify-content-between align-items-center mb-4" data-aos="flip-left">
-        <div>
-          <h2 class="fw-bold">Layanan Unggulan</h2>
-
-          <p class="text-muted mb-0">Layanan yang paling banyak dipilih</p>
-        </div>
-      </div>
-
-      <div class="row g-4" data-aos="flip-right">
-        <div class="col-lg-4" v-for="(service, i) in highlightedServices" :key="i">
-          <div class="card border-0 h-100 highlight-card">
-            <img :src="service.image" class="card-img-top" />
-
-            <div class="card-body">
-              <h5 class="fw-bold">
-                {{ service.title }}
-              </h5>
-
-              <p class="text-muted">
-                {{ service.description }}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <HighlightedServices />
 
     <!-- Search input section -->
     <section class="container" data-aos="flip-right">
@@ -88,7 +81,7 @@ const highlightText = (text) => {
     </section>
 
     <!-- All services listing section -->
-    <section class="container py-5">
+    <section class="container py-5 allServices">
       <div class="d-flex justify-content-between mb-4" data-aos="zoom-in-up">
         <h2 class="fw-bold">Semua Layanan</h2>
 
@@ -124,6 +117,12 @@ const highlightText = (text) => {
 </template>
 
 <style scoped>
+.allServices {
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3Crect stroke='%23FFFFFF' stroke-width='0.3' width='1' height='1' id='s'/%3E%3Cpattern id='a' width='3' height='3' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cuse fill='%23fcfcfc' href='%23s' y='2'/%3E%3Cuse fill='%23fcfcfc' href='%23s' x='1' y='2'/%3E%3Cuse fill='%23fafafa' href='%23s' x='2' y='2'/%3E%3Cuse fill='%23fafafa' href='%23s'/%3E%3Cuse fill='%23f7f7f7' href='%23s' x='2'/%3E%3Cuse fill='%23f7f7f7' href='%23s' x='1' y='1'/%3E%3C/pattern%3E%3Cpattern id='b' width='7' height='11' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23f5f5f5'%3E%3Cuse href='%23s'/%3E%3Cuse href='%23s' y='5' /%3E%3Cuse href='%23s' x='1' y='10'/%3E%3Cuse href='%23s' x='2' y='1'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='8'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='5' y='2'/%3E%3Cuse href='%23s' x='5' y='6'/%3E%3Cuse href='%23s' x='6' y='9'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='h' width='5' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23f5f5f5'%3E%3Cuse href='%23s' y='5'/%3E%3Cuse href='%23s' y='8'/%3E%3Cuse href='%23s' x='1' y='1'/%3E%3Cuse href='%23s' x='1' y='9'/%3E%3Cuse href='%23s' x='1' y='12'/%3E%3Cuse href='%23s' x='2'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='2'/%3E%3Cuse href='%23s' x='3' y='6'/%3E%3Cuse href='%23s' x='3' y='11'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='4' y='10'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='c' width='17' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23f2f2f2'%3E%3Cuse href='%23s' y='11'/%3E%3Cuse href='%23s' x='2' y='9'/%3E%3Cuse href='%23s' x='5' y='12'/%3E%3Cuse href='%23s' x='9' y='4'/%3E%3Cuse href='%23s' x='12' y='1'/%3E%3Cuse href='%23s' x='16' y='6'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='d' width='19' height='17' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23FFFFFF'%3E%3Cuse href='%23s' y='9'/%3E%3Cuse href='%23s' x='16' y='5'/%3E%3Cuse href='%23s' x='14' y='2'/%3E%3Cuse href='%23s' x='11' y='11'/%3E%3Cuse href='%23s' x='6' y='14'/%3E%3C/g%3E%3Cg fill='%23efefef'%3E%3Cuse href='%23s' x='3' y='13'/%3E%3Cuse href='%23s' x='9' y='7'/%3E%3Cuse href='%23s' x='13' y='10'/%3E%3Cuse href='%23s' x='15' y='4'/%3E%3Cuse href='%23s' x='18' y='1'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='e' width='47' height='53' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23FFC107'%3E%3Cuse href='%23s' x='2' y='5'/%3E%3Cuse href='%23s' x='16' y='38'/%3E%3Cuse href='%23s' x='46' y='42'/%3E%3Cuse href='%23s' x='29' y='20'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='f' width='59' height='71' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23FFC107'%3E%3Cuse href='%23s' x='33' y='13'/%3E%3Cuse href='%23s' x='27' y='54'/%3E%3Cuse href='%23s' x='55' y='55'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='g' width='139' height='97' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23FFC107'%3E%3Cuse href='%23s' x='11' y='8'/%3E%3Cuse href='%23s' x='51' y='13'/%3E%3Cuse href='%23s' x='17' y='73'/%3E%3Cuse href='%23s' x='99' y='57'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23b)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23h)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23c)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23d)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23e)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23f)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23g)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+}
 .service-page {
   background: #fff;
 }

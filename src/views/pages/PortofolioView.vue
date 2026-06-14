@@ -1,12 +1,11 @@
 <script setup>
-import { ref, onMounted, onUnmounted} from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 import ClientSection from '@/components/portofolio/ClientSection.vue'
 import PengalamanSection from '@/components/portofolio/PengalamanSection.vue'
 import TestimoniSection from '@/components/portofolio/TestimoniSection.vue'
 import StatistikSection from '@/components/portofolio/StatisticSection.vue'
 import ReferensiSection from '@/components/portofolio/ReferenceSection.vue'
-
 
 import img1 from '@/assets/portofolio/hero/1.png'
 import img2 from '@/assets/portofolio/hero/2.png'
@@ -25,14 +24,6 @@ onMounted(() => {
     currentImage.value = (currentImage.value + 1) % images.length
   }, 3000) // ganti setiap 3 detik
 })
-onMounted(() => {
-  images.forEach(src => {
-    const img = new Image()
-    img.src = src
-  })
-})
-
-
 
 onUnmounted(() => {
   clearInterval(interval)
@@ -61,14 +52,12 @@ const goToProject = (clientName) => {
     data-aos="zoom-in"
     data-aos-once="false"
   >
-    <Transition name="fade" mode="out-in">
-      <img
-        :key="currentImage"
-        :src="images[currentImage]"
-        alt="Hero Background"
-        class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
-      />
-    </Transition>
+    <img
+      :key="currentImage"
+      :src="images[currentImage]"
+      alt="Hero Background"
+      class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+    />
 
     <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75"></div>
 
@@ -80,7 +69,9 @@ const goToProject = (clientName) => {
       <h1 class="display-3 fw-bold mb-4">Portofolio Kami</h1>
 
       <p class="lead col-lg-8 mx-auto text-light">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor, impedit.
+        "Kumpulan rekam jejak dan kisah sukses kami dalam membantu berbagai bisnis berkembang,
+        bertransformasi, dan mencapai potensi maksimalnya melalui solusi konsultasi yang tepat
+        sasaran."
       </p>
     </div>
   </section>
@@ -153,17 +144,6 @@ const goToProject = (clientName) => {
 </template>
 
 <style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-
-
 .pill-tabs .tab-pill-btn {
   border-radius: 50px;
   padding: 0.6rem 1.8rem;
