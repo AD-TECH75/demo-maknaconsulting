@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, nextTick } from 'vue'
 import { contactData } from '@/data/contact/ContactData'
 
 import img1 from '@/assets/services/hero/1.png'
@@ -15,6 +15,18 @@ onMounted(() => {
 })
 onUnmounted(() => {
   clearInterval(interval)
+})
+
+const targetSection = ref(null)
+
+
+onMounted(async () => {
+  await nextTick()
+
+  targetSection.value?.scrollIntoView({
+    behavior: 'smooth',
+    block: 'center',
+  })
 })
 </script>
 
@@ -48,7 +60,7 @@ onUnmounted(() => {
       <span class="badge bg-warning text-dark px-3 py-2 mb-3"> Makna Consulting </span>
 
       <!-- Main hero title -->
-      <h1 class="display-3 fw-bold mb-4">Hubungi Kami</h1>
+      <h1 class="display-3 fw-bold mb-4" ref="targetSection">Hubungi Kami</h1>
 
       <!-- Hero description -->
       <p class="lead col-lg-8 mx-auto text-light">

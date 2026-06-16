@@ -27,11 +27,7 @@ onUnmounted(() => {
 */
 const targetSection = ref(null)
 
-/*
-|--------------------------------------------------------------------------
-| Auto scroll to target section after component rendered
-|--------------------------------------------------------------------------
-*/
+
 onMounted(async () => {
   await nextTick()
 
