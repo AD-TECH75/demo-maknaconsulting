@@ -55,6 +55,7 @@ onMounted(async () => {
     block: 'center',
   })
 })
+
 </script>
 <template>
   <div class="background-wrapper">
