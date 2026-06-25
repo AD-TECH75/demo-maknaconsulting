@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
-import Logo from '/images/PrimaryLogo/Logo.png'
+import Logo from '@/assets/home/PrimaryLogo/Logo.png'
 
 // Vue Router instance for page navigation.
 const router = useRouter()
@@ -157,7 +157,7 @@ const searchEnter = () => {
     <div class="container-fluid bg-cream">
       <!-- Brand logo and company name -->
       <router-link to="/" class="navbar-brand d-flex align-items-center gap-2 bg-cream">
-        <img :src="Logo" height="32" alt="Logo" />
+        <img :src=Logo height="32" alt="Logo" />
 
         <span class="fw-bold text-capitalize d-none d-lg-inline"> Makna Consulting </span>
       </router-link>

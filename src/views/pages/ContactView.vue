@@ -78,12 +78,12 @@ onMounted(async () => {
     <div class="container py-4">
       <div class="row align-items-center g-5">
         <!-- Left Content -->
-        <div class="col-lg-5">
-          <span class="badge text-bg-dark mb-3"> Mari Berdiskusi </span>
+        <div class="col-lg-5" data-aos="fade-up">
+          <span class="badge text-bg-dark mb-3" data-aos="fade-left"> Mari Berdiskusi </span>
 
-          <h2 class="display-4 fw-bold mb-3">Siap Membantu Kebutuhan Anda</h2>
+          <h2 class="display-4 fw-bold mb-3" data-aos="fade-left">Siap Membantu Kebutuhan Anda</h2>
 
-          <p class="lead text-secondary mb-4">
+          <p class="lead text-secondary mb-4" data-aos="fade-left">
             Konsultasikan kebutuhan website, branding, atau layanan digital lainnya bersama tim
             kami. Hubungi kami melalui platform yang paling nyaman untuk Anda.
           </p>
@@ -91,24 +91,24 @@ onMounted(async () => {
         </div>
 
         <!-- Right Contact Cards -->
-        <div class="col-lg-7">
+        <div class="col-lg-7" data-aos="fade-up">
           <div class="row g-4">
-            <div v-for="item in contactData" :key="item.title" class="col-md-6">
+            <div v-for="item in contactData" :key="item.title" class="col-md-6" data-aos="fade-left">
               <a :href="item.link" target="_blank" class="text-decoration-none text-reset">
-                <div class="card bg-cream border-0 shadow-sm h-100 contact-card p-4">
+                <div class="card bg-cream border-0 shadow-sm h-100 contact-card p-4" data-aos="fade-right">
                   <div class="contact-icon mb-3" :class="[item.iconBg, item.iconColor]">
                     <i :class="['bi', item.icon]"></i>
                   </div>
 
-                  <h5 class="fw-bold">
+                  <h5 class="fw-bold" data-aos="fade-right">
                     {{ item.title }}
                   </h5>
 
-                  <p class="text-secondary mb-3">
+                  <p class="text-secondary mb-3" data-aos="fade-right">
                     {{ item.description }}
                   </p>
 
-                  <span class="badge text-dark border">
+                  <span class="badge text-dark border" data-aos="fade-right">
                     {{ item.username }}
                   </span>
                 </div>

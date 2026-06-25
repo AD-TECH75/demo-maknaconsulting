@@ -2,9 +2,7 @@
 import { ref, onMounted } from 'vue'
 import { projects } from '@/data/portofolio/GaleriData.js'
 
-/**
- * LOAD MEDIA (Vite safe map)
- */
+
 const mediaFiles = import.meta.glob('/src/assets/portofolio/galeri/*', {
   eager: true,
   import: 'default',
@@ -15,9 +13,7 @@ const getMediaUrl = (filename) => {
   return mediaFiles[path] || ''
 }
 
-/**
- * SHUFFLE (sekali doang biar stabil)
- */
+
 const shuffleArray = (arr) => {
   const newArr = [...arr]
   for (let i = newArr.length - 1; i > 0; i--) {
@@ -29,27 +25,23 @@ const shuffleArray = (arr) => {
 
 const shuffledProjects = ref([])
 
-/**
- * MODAL STATE
- */
+
 const selectedProject = ref(null)
-const mediaRatio = ref('16 / 9') // default aman
+const mediaRatio = ref('16 / 9')
 
 const openPreview = (project) => {
   selectedProject.value = project
 
-  // reset dulu biar gak flicker
+
   mediaRatio.value = project.type === 'video' ? '16 / 9' : 'auto'
 }
 
-/**
- * detect image ratio biar popup ngikutin file asli
- */
+
 const onImageLoad = (e) => {
   const img = e.target
   const ratio = img.naturalWidth / img.naturalHeight
 
-  // clamp biar gak aneh banget
+
   if (ratio > 1.8) mediaRatio.value = '16 / 9'
   else if (ratio < 0.8) mediaRatio.value = '3 / 4'
   else mediaRatio.value = `${ratio}`

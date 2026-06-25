@@ -1,123 +1,154 @@
-// Export logo and institution metadata used for partner or client showcase sections.
+
+import dishub from '@/assets/home/SecondaryLogo/dishub.png'
+import emde from '@/assets/home/SecondaryLogo/emde.png'
+import indosat from '@/assets/home/SecondaryLogo/indosat.png'
+import inka from '@/assets/home/SecondaryLogo/inka.png'
+import kejaksaan from '@/assets/home/SecondaryLogo/kejaksaan.png'
+import kotaMadiun from '@/assets/home/SecondaryLogo/kotaMadiun.png'
+import kotaMojokerto from '@/assets/home/SecondaryLogo/kotaMojokerto.png'
+import kotaPasuruan from '@/assets/home/SecondaryLogo/kotaPasuruan.png'
+import kotaProbolinggo from '@/assets/home/SecondaryLogo/kotaProbolinggo.png'
+import kotaSurabaya from '@/assets/home/SecondaryLogo/kotaSurabaya.png'
+import kotaTangerang from '@/assets/home/SecondaryLogo/kotaTangerang.png'
+import logoBangkalan from '@/assets/home/SecondaryLogo/logoBangkalan.png'
+import logoBanjar from '@/assets/home/SecondaryLogo/logoBanjar.png'
+import logoBojonegoro from '@/assets/home/SecondaryLogo/logoBojonegoro.png'
+import logoGresik from '@/assets/home/SecondaryLogo/logoGresik.png'
+import logoKediri from '@/assets/home/SecondaryLogo/logoKediri.png'
+import logoLamongan from '@/assets/home/SecondaryLogo/logoLamongan.png'
+import logoLebak from '@/assets/home/SecondaryLogo/logoLebak.png'
+import logoMagetan from '@/assets/home/SecondaryLogo/logoMagetan.png'
+import logoPandeglang from '@/assets/home/SecondaryLogo/logoPandeglang.png'
+import logoPasuruan from '@/assets/home/SecondaryLogo/logoPasuruan.png'
+import logoProbolinggo from '@/assets/home/SecondaryLogo/logoProbolinggo.png'
+import logoSidoarjo from '@/assets/home/SecondaryLogo/logoSidoarjo.png'
+import provJatim from '@/assets/home/SecondaryLogo/provJatim.png'
+import provSulsel from '@/assets/home/SecondaryLogo/provSulsel.png'
+import rsjm from '@/assets/home/SecondaryLogo/rsjm.png'
+import rssm from '@/assets/home/SecondaryLogo/rssm.png'
+import rsudKediri from '@/assets/home/SecondaryLogo/rsudKediri.png'
+import rsudLamongan from '@/assets/home/SecondaryLogo/rsudLamongan.png'
+import rsudProbolinggo from '@/assets/home/SecondaryLogo/rsudProbolinggo.png'
+
 export const images = [
   {
-    src: '/images/SecondaryLogo/dishub.png',
+    src: dishub,
     name: 'Kementerian Perhubungan (Kerenhub) Republik Indonesia',
   },
   {
-    src: '/images/SecondaryLogo/emde.png',
+    src: emde,
     name: 'The Emdee Skin Clinic Kediri',
   },
   {
-    src: '/images/SecondaryLogo/indosat.png',
+    src: indosat,
     name: 'Indosat Ooredoo Hutchison (IOH)',
   },
   {
-    src: '/images/SecondaryLogo/inka.png',
+    src: inka,
     name: 'PT Industri Kereta Api (Persero)',
   },
   {
-    src: '/images/SecondaryLogo/kejaksaan.png',
+    src: kejaksaan,
     name: 'Kejaksaan Republik Indonesia',
   },
   {
-    src: '/images/SecondaryLogo/kotaMadiun.png',
+    src: kotaMadiun,
     name: 'Pemerintah Kota Madiun',
   },
   {
-    src: '/images/SecondaryLogo/kotaMojokerto.png',
+    src: kotaMojokerto,
     name: 'Pemerintah Kota Mojokerto',
   },
   {
-    src: '/images/SecondaryLogo/kotaPasuruan.png',
+    src: kotaPasuruan,
     name: 'Pemerintah Kota Pasuruan',
   },
   {
-    src: '/images/SecondaryLogo/kotaProbolinggo.png',
+    src: kotaProbolinggo,
     name: 'Pemerintah Kota Probolinggo',
   },
   {
-    src: '/images/SecondaryLogo/kotaSurabaya.png',
+    src: kotaSurabaya,
     name: 'Pemerintah Kota Surabaya',
   },
   {
-    src: '/images/SecondaryLogo/kotaTangerang.png',
+    src: kotaTangerang,
     name: 'Pemerintah Kota Tangerang',
   },
   {
-    src: '/images/SecondaryLogo/logoBangkalan.png',
+    src: logoBangkalan,
     name: 'Pemerintah Kabupaten Bangkalan',
   },
   {
-    src: '/images/SecondaryLogo/logoBanjar.png',
+    src: logoBanjar,
     name: 'Pemerintah Kabupaten Banjar',
   },
   {
-    src: '/images/SecondaryLogo/logoBojonegoro.png',
+    src: logoBojonegoro,
     name: 'Pemerintah Kabupaten Bojonegoro',
   },
   {
-    src: '/images/SecondaryLogo/logoGresik.png',
+    src: logoGresik,
     name: 'Pemerintah Kabupaten Gresik',
   },
   {
-    src: '/images/SecondaryLogo/logoKediri.png',
+    src: logoKediri,
     name: 'Pemerintah Kabupaten Kediri',
   },
   {
-    src: '/images/SecondaryLogo/logoLamongan.png',
+    src: logoLamongan,
     name: 'Pemerintah Kabupaten Lamongan',
   },
   {
-    src: '/images/SecondaryLogo/logoLebak.png',
+    src: logoLebak,
     name: 'Pemerintah Kabupaten Lebak',
   },
   {
-    src: '/images/SecondaryLogo/logoMagetan.png',
+    src: logoMagetan,
     name: 'Pemerintah Kabupaten Magetan',
   },
   {
-    src: '/images/SecondaryLogo/logoPandeglang.png',
+    src: logoPandeglang,
     name: 'Pemerintah Kabupaten Pandeglag',
   },
   {
-    src: '/images/SecondaryLogo/logoPasuruan.png',
+    src: logoPasuruan,
     name: 'Pemerintah Kabupaten Pasuruan',
   },
   {
-    src: '/images/SecondaryLogo/logoProbolinggo.png',
+    src: logoProbolinggo,
     name: 'Pemerintah Kabupaten Probolinggo',
   },
   {
-    src: '/images/SecondaryLogo/logoSidoarjo.png',
+    src: logoSidoarjo,
     name: 'Pemerintah Kabupaten Sidoarjo',
   },
   {
-    src: '/images/SecondaryLogo/provJatim.png',
+    src: provJatim,
     name: 'Pemerintah Provinsi Jawa Timur',
   },
   {
-    src: '/images/SecondaryLogo/provSulsel.png',
+    src: provSulsel,
     name: 'Pemerintah Provinsi Sulawesi Selatan',
   },
   {
-    src: '/images/SecondaryLogo/rsjm.png',
+    src: rsjm,
     name: 'Rumah Sakit Jiwa Menur Surabaya',
   },
   {
-    src: '/images/SecondaryLogo/rssm.png',
+    src: rssm,
     name: 'Rumah Sakit Umum Daerah (RSUD) dr. Soedono Madiun.',
   },
   {
-    src: '/images/SecondaryLogo/rsudKediri.png',
+    src: rsudKediri,
     name: 'RSUD Kabupaten Kediri',
   },
   {
-    src: '/images/SecondaryLogo/rsudLamongan.png',
+    src: rsudLamongan,
     name: 'RSUD dr. Soegiri Lamongan',
   },
   {
-    src: '/images/SecondaryLogo/rsudProbolinggo.png',
+    src: rsudProbolinggo,
     name: 'RSUD dr. Mohamad Saleh Kota Probolinggo',
   },
 ]
