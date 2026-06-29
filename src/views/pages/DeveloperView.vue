@@ -16,6 +16,7 @@ import DeveloperData from '@/data/dev/DeveloperData'
 | All content is dynamically loaded from DeveloperData.
 |--------------------------------------------------------------------------
 */
+
 </script>
 
 <template>

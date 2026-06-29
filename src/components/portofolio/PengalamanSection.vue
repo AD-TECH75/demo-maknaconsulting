@@ -38,7 +38,7 @@
 
               <small
                 class="text-secondary"
-                v-html="highlightText(`${project.client} • ${project.year}`)"
+                v-html="highlightText(`${project.client}`)"
               ></small>
             </div>
           </button>
